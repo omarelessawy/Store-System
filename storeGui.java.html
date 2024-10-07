@@ -1,0 +1,545 @@
+<html>
+<head>
+<title>storeGui.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+storeGui.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">javax</span><span class="s2">.</span><span class="s1">swing</span><span class="s2">.*;</span>
+<span class="s0">import </span><span class="s1">javax</span><span class="s2">.</span><span class="s1">swing</span><span class="s2">.</span><span class="s1">border</span><span class="s2">.</span><span class="s1">LineBorder</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">awt</span><span class="s2">.*;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">awt</span><span class="s2">.</span><span class="s1">event</span><span class="s2">.</span><span class="s1">ActionEvent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">awt</span><span class="s2">.</span><span class="s1">event</span><span class="s2">.</span><span class="s1">ActionListener</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">awt</span><span class="s2">.</span><span class="s1">geom</span><span class="s2">.</span><span class="s1">RoundRectangle2D</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">storeGui  </span><span class="s0">implements </span><span class="s1">ActionListener </span><span class="s2">{</span>
+
+
+
+
+
+    <span class="s1">JFrame frame1</span><span class="s2">;</span>
+    <span class="s1">JFrame frame2</span><span class="s2">;</span>
+
+    <span class="s1">JTextField name</span><span class="s2">;</span>
+    <span class="s1">JTextField ID</span><span class="s2">;</span>
+    <span class="s1">JTextField address</span><span class="s2">;</span>
+    <span class="s1">JTextField numProducts</span><span class="s2">;</span>
+
+    <span class="s1">JButton submit</span><span class="s2">;</span>
+    <span class="s1">JButton addButton1</span><span class="s2">;</span>
+    <span class="s1">JButton removeButton1</span><span class="s2">;</span>
+    <span class="s1">JButton orderButton</span><span class="s2">;</span>
+    <span class="s1">JButton addButton2</span><span class="s2">;</span>
+    <span class="s1">JButton removeButton2</span><span class="s2">;</span>
+
+    <span class="s1">JButton addButton3</span><span class="s2">;</span>
+    <span class="s1">JButton removeButton3</span><span class="s2">;</span>
+
+
+    <span class="s1">JLabel nameLabel </span><span class="s2">;</span>
+    <span class="s1">JLabel idLabel </span><span class="s2">;</span>
+    <span class="s1">JLabel addressLabel </span><span class="s2">;</span>
+
+    <span class="s1">JLabel morrLabel</span><span class="s2">;</span>
+    <span class="s1">JLabel f2_nameLabel1</span><span class="s2">;</span>
+    <span class="s1">JLabel f2_nameLabel2</span><span class="s2">;</span>
+    <span class="s1">JLabel f2_idLabel1</span><span class="s2">;</span>
+    <span class="s1">JLabel f2_idLabel2</span><span class="s2">;</span>
+    <span class="s1">JLabel f2_addressLabel1</span><span class="s2">;</span>
+    <span class="s1">JLabel f2_addressLabel2</span><span class="s2">;</span>
+    <span class="s1">JLabel electoronicProd1</span><span class="s2">;</span>
+    <span class="s1">JLabel clothingProd1</span><span class="s2">;</span>
+    <span class="s1">JLabel bookProd1</span><span class="s2">;</span>
+
+
+    <span class="s1">JLabel electoronicProd2</span><span class="s2">;</span>
+    <span class="s1">JLabel clothingProd2</span><span class="s2">;</span>
+    <span class="s1">JLabel bookProd2</span><span class="s2">;</span>
+    <span class="s1">JLabel inCart1</span><span class="s2">;</span>
+    <span class="s1">JLabel inCart2</span><span class="s2">;</span>
+    <span class="s1">JLabel inCart3</span><span class="s2">;</span>
+
+    <span class="s1">JLabel inCartn1</span><span class="s2">;</span>
+    <span class="s1">JLabel inCartn2</span><span class="s2">;</span>
+    <span class="s1">JLabel inCartn3</span><span class="s2">;</span>
+    <span class="s1">JLabel nummProduct</span><span class="s2">;</span>
+<span class="s1">JLabel cartFull</span><span class="s2">;</span>
+
+
+    <span class="s1">JPanel border1</span><span class="s2">;</span>
+
+    <span class="s0">int </span><span class="s1">i1</span><span class="s2">;</span>
+    <span class="s0">int </span><span class="s1">i2</span><span class="s2">;</span>
+    <span class="s0">int </span><span class="s1">i3</span><span class="s2">;</span>
+
+
+
+
+    <span class="s1">ElectronicProduct electronicProduct</span><span class="s2">;</span>
+    <span class="s1">ClothingProduct clothingProduct</span><span class="s2">;</span>
+    <span class="s1">BookProduct bookProduct</span><span class="s2">;</span>
+    <span class="s1">Customer customer</span><span class="s2">;</span>
+    <span class="s1">Cart cart</span><span class="s2">;</span>
+
+    <span class="s1">storeGui</span><span class="s2">(){</span>
+
+        <span class="s1">electronicProduct </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ElectronicProduct</span><span class="s2">(</span><span class="s3">23</span><span class="s2">, </span><span class="s4">&quot;Smartphone&quot;</span><span class="s2">, </span><span class="s3">1500</span><span class="s2">, </span><span class="s4">&quot;Samsung&quot;</span><span class="s2">, </span><span class="s3">7</span><span class="s2">);</span>
+       <span class="s1">clothingProduct </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ClothingProduct</span><span class="s2">(</span><span class="s3">13</span><span class="s2">, </span><span class="s4">&quot;T-Shirt&quot;</span><span class="s2">, </span><span class="s3">1700</span><span class="s2">, </span><span class="s4">&quot;Medium &quot;</span><span class="s2">, </span><span class="s4">&quot;bollister&quot;</span><span class="s2">);</span>
+       <span class="s1">bookProduct </span><span class="s2">= </span><span class="s0">new </span><span class="s1">BookProduct</span><span class="s2">(</span><span class="s3">67</span><span class="s2">, </span><span class="s4">&quot;Harry Potter&quot;</span><span class="s2">, </span><span class="s3">170</span><span class="s2">, </span><span class="s4">&quot;Khaled Hammad&quot;</span><span class="s2">, </span><span class="s4">&quot;sha3ban 3bd elr7eem&quot;</span><span class="s2">);</span>
+       <span class="s1">customer </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Customer</span><span class="s2">();</span>
+       <span class="s1">cart </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Cart</span><span class="s2">();</span>
+
+         <span class="s1">frame1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JFrame</span><span class="s2">(</span><span class="s4">&quot;Morr's Store&quot;</span><span class="s2">);</span>
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">setDefaultCloseOperation</span><span class="s2">(</span><span class="s1">JFrame</span><span class="s2">.</span><span class="s1">EXIT_ON_CLOSE</span><span class="s2">);</span>
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">setSize</span><span class="s2">(</span><span class="s3">700</span><span class="s2">, </span><span class="s3">450</span><span class="s2">);</span>
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">setLayout</span><span class="s2">(</span><span class="s0">null</span><span class="s2">);</span>
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">setLocationRelativeTo</span><span class="s2">(</span><span class="s0">null</span><span class="s2">);</span>
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">setResizable</span><span class="s2">(</span><span class="s0">false</span><span class="s2">);</span>
+            <span class="s1">frame1</span><span class="s2">.</span><span class="s1">getContentPane</span><span class="s2">().</span><span class="s1">setBackground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0x27403d</span><span class="s2">));</span>
+
+        <span class="s1">morrLabel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">morrLabel</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Welcome to E-Commerce System&quot;</span><span class="s2">);</span>
+        <span class="s1">morrLabel</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">110 </span><span class="s2">,  </span><span class="s3">20   </span><span class="s2">, </span><span class="s3">1000 </span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">morrLabel</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">30</span><span class="s2">));</span>
+        <span class="s1">morrLabel</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">morrLabel</span><span class="s2">);</span>
+
+        <span class="s1">name </span><span class="s2">=  </span><span class="s0">new </span><span class="s1">JTextField</span><span class="s2">();</span>
+        <span class="s1">name</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">280</span><span class="s2">, </span><span class="s3">80</span><span class="s2">, </span><span class="s3">230</span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">name</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">19</span><span class="s2">));</span>
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">name</span><span class="s2">);</span>
+
+        <span class="s1">nameLabel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">nameLabel</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Name :&quot;</span><span class="s2">);</span>
+        <span class="s1">nameLabel</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">200  </span><span class="s2">,</span><span class="s3">80 </span><span class="s2">, </span><span class="s3">80190 </span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">nameLabel</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+
+        <span class="s1">nameLabel</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">19</span><span class="s2">));</span>
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">nameLabel</span><span class="s2">);</span>
+
+
+        <span class="s1">ID </span><span class="s2">=  </span><span class="s0">new </span><span class="s1">JTextField</span><span class="s2">();</span>
+        <span class="s1">ID</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">280</span><span class="s2">, </span><span class="s3">150</span><span class="s2">, </span><span class="s3">230</span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">ID</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">19</span><span class="s2">));</span>
+
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">ID</span><span class="s2">);</span>
+
+
+        <span class="s1">numProducts </span><span class="s2">=  </span><span class="s0">new </span><span class="s1">JTextField</span><span class="s2">();</span>
+        <span class="s1">numProducts</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">580</span><span class="s2">, </span><span class="s3">300</span><span class="s2">, </span><span class="s3">60</span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">numProducts</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">19</span><span class="s2">));</span>
+
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">numProducts</span><span class="s2">);</span>
+
+
+        <span class="s1">nummProduct </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">nummProduct</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Number of Products :&quot;</span><span class="s2">);</span>
+        <span class="s1">nummProduct</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">440  </span><span class="s2">, </span><span class="s3">300 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">nummProduct</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">14</span><span class="s2">));</span>
+        <span class="s1">nummProduct</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">nummProduct</span><span class="s2">);</span>
+
+        <span class="s1">idLabel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">idLabel</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;ID :&quot;</span><span class="s2">);</span>
+        <span class="s1">idLabel</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">233  </span><span class="s2">, </span><span class="s3">150 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">idLabel</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">19</span><span class="s2">));</span>
+        <span class="s1">idLabel</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">idLabel</span><span class="s2">);</span>
+
+
+
+
+
+        <span class="s1">address </span><span class="s2">=  </span><span class="s0">new </span><span class="s1">JTextField</span><span class="s2">();</span>
+        <span class="s1">address</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">280</span><span class="s2">, </span><span class="s3">220</span><span class="s2">, </span><span class="s3">230</span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">address</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">19</span><span class="s2">));</span>
+
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">address</span><span class="s2">);</span>
+
+        <span class="s1">addressLabel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">addressLabel</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Address :&quot;</span><span class="s2">);</span>
+        <span class="s1">addressLabel</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">181  </span><span class="s2">, </span><span class="s3">220 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">addressLabel</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">19</span><span class="s2">));</span>
+        <span class="s1">addressLabel</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">addressLabel</span><span class="s2">);</span>
+
+
+        <span class="s1">submit </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JButton</span><span class="s2">(</span><span class="s4">&quot;Submit&quot;</span><span class="s2">);</span>
+        <span class="s1">submit</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">280</span><span class="s2">, </span><span class="s3">300</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">submit</span><span class="s2">.</span><span class="s1">setFocusable</span><span class="s2">(</span><span class="s0">false</span><span class="s2">);</span>
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">submit</span><span class="s2">);</span>
+        <span class="s1">submit</span><span class="s2">.</span><span class="s1">addActionListener</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+
+
+
+
+        <span class="s1">frame2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JFrame</span><span class="s2">(</span><span class="s4">&quot;Morr's Store&quot;</span><span class="s2">);</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">setDefaultCloseOperation</span><span class="s2">(</span><span class="s1">JFrame</span><span class="s2">.</span><span class="s1">EXIT_ON_CLOSE</span><span class="s2">);</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">setSize</span><span class="s2">(</span><span class="s3">1000</span><span class="s2">, </span><span class="s3">600</span><span class="s2">);</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">setLayout</span><span class="s2">(</span><span class="s0">null</span><span class="s2">);</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">setLocationRelativeTo</span><span class="s2">(</span><span class="s0">null</span><span class="s2">);</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">setResizable</span><span class="s2">(</span><span class="s0">false</span><span class="s2">);</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">getContentPane</span><span class="s2">().</span><span class="s1">setBackground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0x27403d</span><span class="s2">));</span>
+
+
+
+        <span class="s1">addButton1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JButton</span><span class="s2">(</span><span class="s4">&quot;Add&quot;</span><span class="s2">);</span>
+        <span class="s1">addButton1</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">690</span><span class="s2">, </span><span class="s3">180</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">addButton1</span><span class="s2">.</span><span class="s1">setFocusable</span><span class="s2">(</span><span class="s0">false</span><span class="s2">);</span>
+        <span class="s1">addButton1</span><span class="s2">.</span><span class="s1">setBackground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">addButton1</span><span class="s2">);</span>
+        <span class="s1">addButton1</span><span class="s2">.</span><span class="s1">addActionListener</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+
+        <span class="s1">removeButton1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JButton</span><span class="s2">(</span><span class="s4">&quot;Remove&quot;</span><span class="s2">);</span>
+        <span class="s1">removeButton1</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">820</span><span class="s2">, </span><span class="s3">180</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">removeButton1</span><span class="s2">.</span><span class="s1">setFocusable</span><span class="s2">(</span><span class="s0">false</span><span class="s2">);</span>
+        <span class="s1">removeButton1</span><span class="s2">.</span><span class="s1">setBackground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">removeButton1</span><span class="s2">);</span>
+        <span class="s1">removeButton1</span><span class="s2">.</span><span class="s1">addActionListener</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+
+        <span class="s1">addButton2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JButton</span><span class="s2">(</span><span class="s4">&quot;Add&quot;</span><span class="s2">);</span>
+        <span class="s1">addButton2</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">690</span><span class="s2">, </span><span class="s3">290</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">addButton2</span><span class="s2">.</span><span class="s1">setFocusable</span><span class="s2">(</span><span class="s0">false</span><span class="s2">);</span>
+        <span class="s1">addButton2</span><span class="s2">.</span><span class="s1">setBackground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">addButton2</span><span class="s2">);</span>
+        <span class="s1">addButton2</span><span class="s2">.</span><span class="s1">addActionListener</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+
+        <span class="s1">removeButton2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JButton</span><span class="s2">(</span><span class="s4">&quot;Remove&quot;</span><span class="s2">);</span>
+        <span class="s1">removeButton2</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">820</span><span class="s2">, </span><span class="s3">290</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">removeButton2</span><span class="s2">.</span><span class="s1">setFocusable</span><span class="s2">(</span><span class="s0">false</span><span class="s2">);</span>
+        <span class="s1">removeButton2</span><span class="s2">.</span><span class="s1">setBackground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">removeButton2</span><span class="s2">);</span>
+        <span class="s1">removeButton2</span><span class="s2">.</span><span class="s1">addActionListener</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+
+
+
+        <span class="s1">addButton3 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JButton</span><span class="s2">(</span><span class="s4">&quot;Add&quot;</span><span class="s2">);</span>
+        <span class="s1">addButton3</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">690</span><span class="s2">, </span><span class="s3">400</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">addButton3</span><span class="s2">.</span><span class="s1">setFocusable</span><span class="s2">(</span><span class="s0">false</span><span class="s2">);</span>
+        <span class="s1">addButton3</span><span class="s2">.</span><span class="s1">setBackground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">addButton3</span><span class="s2">);</span>
+        <span class="s1">addButton3</span><span class="s2">.</span><span class="s1">addActionListener</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+
+        <span class="s1">removeButton3 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JButton</span><span class="s2">(</span><span class="s4">&quot;Remove&quot;</span><span class="s2">);</span>
+        <span class="s1">removeButton3</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">820</span><span class="s2">, </span><span class="s3">400</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">removeButton3</span><span class="s2">.</span><span class="s1">setFocusable</span><span class="s2">(</span><span class="s0">false</span><span class="s2">);</span>
+        <span class="s1">removeButton3</span><span class="s2">.</span><span class="s1">setBackground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">removeButton3</span><span class="s2">);</span>
+        <span class="s1">removeButton3</span><span class="s2">.</span><span class="s1">addActionListener</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+
+        <span class="s1">orderButton </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JButton</span><span class="s2">(</span><span class="s4">&quot;Order&quot;</span><span class="s2">);</span>
+        <span class="s1">orderButton</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">430</span><span class="s2">, </span><span class="s3">500</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">orderButton</span><span class="s2">.</span><span class="s1">setFocusable</span><span class="s2">(</span><span class="s0">false</span><span class="s2">);</span>
+        <span class="s1">orderButton</span><span class="s2">.</span><span class="s1">setBackground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">orderButton</span><span class="s2">);</span>
+        <span class="s1">orderButton</span><span class="s2">.</span><span class="s1">addActionListener</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+
+
+
+
+
+
+
+        <span class="s1">electoronicProd1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">electoronicProd1</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Product :&quot;</span><span class="s2">);</span>
+        <span class="s1">electoronicProd1</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">20</span><span class="s2">));</span>
+        <span class="s1">electoronicProd1</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">21 </span><span class="s2">, </span><span class="s3">175 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">electoronicProd1</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">electoronicProd1</span><span class="s2">);</span>
+
+        <span class="s1">electoronicProd2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">electoronicProd2</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Smartphone&quot;</span><span class="s2">);</span>
+        <span class="s1">electoronicProd2</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">20</span><span class="s2">));</span>
+        <span class="s1">electoronicProd2</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">120 </span><span class="s2">, </span><span class="s3">175 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">electoronicProd2</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">electoronicProd2</span><span class="s2">);</span>
+
+
+
+        <span class="s1">clothingProd1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">clothingProd1</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Product :&quot;</span><span class="s2">);</span>
+        <span class="s1">clothingProd1</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">20</span><span class="s2">));</span>
+        <span class="s1">clothingProd1</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">21 </span><span class="s2">, </span><span class="s3">285 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">clothingProd1</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">clothingProd1</span><span class="s2">);</span>
+        <span class="s1">clothingProd2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">clothingProd2</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;T-Shirt&quot;</span><span class="s2">);</span>
+        <span class="s1">clothingProd2</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">20</span><span class="s2">));</span>
+        <span class="s1">clothingProd2</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">120 </span><span class="s2">, </span><span class="s3">285 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">clothingProd2</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">clothingProd2</span><span class="s2">);</span>
+
+
+
+
+
+        <span class="s1">bookProd1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">bookProd1</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Product :&quot;</span><span class="s2">);</span>
+        <span class="s1">bookProd1</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">20</span><span class="s2">));</span>
+        <span class="s1">bookProd1</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">21 </span><span class="s2">, </span><span class="s3">395 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">bookProd1</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">bookProd1</span><span class="s2">);</span>
+        <span class="s1">bookProd2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">bookProd2</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Harry Potter Book&quot;</span><span class="s2">);</span>
+        <span class="s1">bookProd2</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">20</span><span class="s2">));</span>
+        <span class="s1">bookProd2</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">120 </span><span class="s2">, </span><span class="s3">395 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">bookProd2</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">bookProd2</span><span class="s2">);</span>
+
+
+
+
+
+
+
+
+        <span class="s1">f2_nameLabel1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">f2_nameLabel1</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Name :&quot;</span><span class="s2">);</span>
+        <span class="s1">f2_nameLabel1</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">18</span><span class="s2">));</span>
+        <span class="s1">f2_nameLabel1</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">21 </span><span class="s2">, </span><span class="s3">50 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">f2_nameLabel1</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">f2_nameLabel1</span><span class="s2">);</span>
+
+        <span class="s1">f2_nameLabel2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">f2_nameLabel2</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">18</span><span class="s2">));</span>
+        <span class="s1">f2_nameLabel2</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">98 </span><span class="s2">, </span><span class="s3">50 </span><span class="s2">, </span><span class="s3">500 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">f2_nameLabel2</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+
+
+
+
+        <span class="s1">f2_idLabel1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">f2_idLabel1</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;ID :&quot;</span><span class="s2">);</span>
+        <span class="s1">f2_idLabel1</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">18</span><span class="s2">));</span>
+        <span class="s1">f2_idLabel1</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">420 </span><span class="s2">, </span><span class="s3">50 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">f2_idLabel1</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">f2_idLabel1</span><span class="s2">);</span>
+
+        <span class="s1">f2_idLabel2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">f2_idLabel2</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">18</span><span class="s2">));</span>
+        <span class="s1">f2_idLabel2</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">460 </span><span class="s2">, </span><span class="s3">50 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">f2_idLabel2</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+
+
+        <span class="s1">f2_addressLabel1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">f2_addressLabel1</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Address :&quot;</span><span class="s2">);</span>
+        <span class="s1">f2_addressLabel1</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">18</span><span class="s2">));</span>
+        <span class="s1">f2_addressLabel1</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">700 </span><span class="s2">, </span><span class="s3">50 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">f2_addressLabel1</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">f2_addressLabel1</span><span class="s2">);</span>
+
+        <span class="s1">f2_addressLabel2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">f2_addressLabel2</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">18</span><span class="s2">));</span>
+        <span class="s1">f2_addressLabel2</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">782 </span><span class="s2">, </span><span class="s3">50 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">f2_addressLabel2</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+
+
+
+        <span class="s1">inCart1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">inCart1</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;in cart:&quot;</span><span class="s2">);</span>
+        <span class="s1">inCart1</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">20</span><span class="s2">));</span>
+        <span class="s1">inCart1</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">411 </span><span class="s2">, </span><span class="s3">175 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">inCart1</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">inCart1</span><span class="s2">);</span>
+
+        <span class="s1">inCart2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">inCart2</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;in cart:&quot;</span><span class="s2">);</span>
+        <span class="s1">inCart2</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">20</span><span class="s2">));</span>
+        <span class="s1">inCart2</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">411 </span><span class="s2">, </span><span class="s3">285 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">inCart2</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">inCart2</span><span class="s2">);</span>
+
+
+        <span class="s1">inCart3 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">inCart3</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;in cart:&quot;</span><span class="s2">);</span>
+        <span class="s1">inCart3</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">20</span><span class="s2">));</span>
+        <span class="s1">inCart3</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">411 </span><span class="s2">, </span><span class="s3">395 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">inCart3</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xe35d24</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">inCart3</span><span class="s2">);</span>
+
+ <span class="s1">i1 </span><span class="s2">=</span><span class="s3">0</span><span class="s2">;</span>
+ <span class="s1">i2 </span><span class="s2">= </span><span class="s3">0</span><span class="s2">;</span>
+ <span class="s1">i3 </span><span class="s2">= </span><span class="s3">0</span><span class="s2">;</span>
+        <span class="s1">inCartn1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">inCartn1</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">String</span><span class="s2">.</span><span class="s1">valueOf</span><span class="s2">(</span><span class="s1">i1</span><span class="s2">));</span>
+        <span class="s1">inCartn1</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">20</span><span class="s2">));</span>
+        <span class="s1">inCartn1</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">477 </span><span class="s2">, </span><span class="s3">176 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">inCartn1</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">inCartn1</span><span class="s2">);</span>
+
+        <span class="s1">inCartn2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">inCartn2</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">String</span><span class="s2">.</span><span class="s1">valueOf</span><span class="s2">(</span><span class="s1">i2</span><span class="s2">));</span>
+        <span class="s1">inCartn2</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">20</span><span class="s2">));</span>
+        <span class="s1">inCartn2</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">477 </span><span class="s2">, </span><span class="s3">286 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">inCartn2</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">inCartn2</span><span class="s2">);</span>
+
+
+        <span class="s1">inCartn3 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">inCartn3</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">String</span><span class="s2">.</span><span class="s1">valueOf</span><span class="s2">(</span><span class="s1">i3</span><span class="s2">));</span>
+        <span class="s1">inCartn3</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">20</span><span class="s2">));</span>
+        <span class="s1">inCartn3</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">477 </span><span class="s2">, </span><span class="s3">396 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">inCartn3</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0xf1dee8</span><span class="s2">));</span>
+        <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">inCartn3</span><span class="s2">);</span>
+
+
+
+        <span class="s1">cartFull </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">();</span>
+        <span class="s1">cartFull</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Cart is full&quot;</span><span class="s2">);</span>
+        <span class="s1">cartFull</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">200 </span><span class="s2">, </span><span class="s3">50 </span><span class="s2">, </span><span class="s3">190 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">cartFull</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s4">&quot;Rastanty Cortez&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s3">19</span><span class="s2">));</span>
+        <span class="s1">cartFull</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">red</span><span class="s2">);</span>
+<span class="s5">//frame2.add(cartFull);</span>
+
+
+        <span class="s1">border1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JPanel</span><span class="s2">();</span>
+        <span class="s1">border1</span><span class="s2">.</span><span class="s1">setBounds</span><span class="s2">(</span><span class="s3">690 </span><span class="s2">, </span><span class="s3">50 </span><span class="s2">, </span><span class="s3">280 </span><span class="s2">,</span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">border1</span><span class="s2">.</span><span class="s1">setBackground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s3">0x27403d</span><span class="s2">));</span>
+        <span class="s1">border1</span><span class="s2">.</span><span class="s1">setBorder</span><span class="s2">(</span><span class="s0">new </span><span class="s1">LineBorder</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">BLACK</span><span class="s2">,</span><span class="s3">1</span><span class="s2">));</span>
+
+
+
+
+        <span class="s1">frame1</span><span class="s2">.</span><span class="s1">setVisible</span><span class="s2">(</span><span class="s0">true</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+
+
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">actionPerformed</span><span class="s2">(</span><span class="s1">ActionEvent e</span><span class="s2">) {</span>
+
+        <span class="s0">if</span><span class="s2">(</span><span class="s1">e</span><span class="s2">.</span><span class="s1">getSource</span><span class="s2">() == </span><span class="s1">submit</span><span class="s2">){</span>
+            <span class="s0">int </span><span class="s1">cartProducts </span><span class="s2">= </span><span class="s1">Integer</span><span class="s2">.</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">numProducts</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">());</span>
+
+<span class="s1">cart</span><span class="s2">.</span><span class="s1">setProducts</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Product</span><span class="s2">[</span><span class="s1">cartProducts</span><span class="s2">]);</span>
+
+
+<span class="s5">//cart.setCartProducts(Integer.parseInt(numProducts.getText()));</span>
+            <span class="s1">f2_nameLabel2</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">name</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">());</span>
+            <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">f2_nameLabel2</span><span class="s2">);</span>
+            <span class="s1">customer</span><span class="s2">.</span><span class="s1">setName</span><span class="s2">(</span><span class="s1">name</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">());</span>
+
+
+            <span class="s1">f2_idLabel2</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">ID</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">());</span>
+
+            <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">f2_idLabel2</span><span class="s2">);</span>
+            <span class="s1">customer</span><span class="s2">.</span><span class="s1">setCustomerId</span><span class="s2">(</span><span class="s1">Integer</span><span class="s2">.</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">ID</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">()));</span>
+            <span class="s1">cart</span><span class="s2">.</span><span class="s1">setCustomerId</span><span class="s2">(</span><span class="s1">Integer</span><span class="s2">.</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">ID</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">()));</span>
+<span class="s5">//            cart.setnProducts(Integer.parseInt(numProducts.getText()));</span>
+
+
+
+
+            <span class="s1">f2_addressLabel2</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">address</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">());</span>
+            <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">f2_addressLabel2</span><span class="s2">);</span>
+            <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">border1</span><span class="s2">);</span>
+            <span class="s1">customer</span><span class="s2">.</span><span class="s1">setAddress</span><span class="s2">(</span><span class="s1">address</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">());</span>
+
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">();</span>
+            <span class="s1">frame1</span><span class="s2">.</span><span class="s1">setVisible</span><span class="s2">(</span><span class="s0">false</span><span class="s2">);</span>
+           <span class="s1">frame2</span><span class="s2">.</span><span class="s1">setVisible</span><span class="s2">(</span><span class="s0">true</span><span class="s2">);</span>
+
+        <span class="s2">}</span>
+
+        <span class="s0">if</span><span class="s2">(</span><span class="s1">e</span><span class="s2">.</span><span class="s1">getSource</span><span class="s2">() == </span><span class="s1">addButton1</span><span class="s2">){</span>
+            <span class="s0">try</span><span class="s2">{</span>
+                <span class="s1">cart</span><span class="s2">.</span><span class="s1">addProduct</span><span class="s2">(</span><span class="s1">electronicProduct</span><span class="s2">);</span>
+                <span class="s1">inCartn1</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">String</span><span class="s2">.</span><span class="s1">valueOf</span><span class="s2">(++</span><span class="s1">i1</span><span class="s2">));</span>
+                <span class="s1">cartFull</span><span class="s2">.</span><span class="s1">setVisible</span><span class="s2">(</span><span class="s0">false</span><span class="s2">); </span><span class="s5">// Set visible before adding</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">remove</span><span class="s2">(</span><span class="s1">cartFull</span><span class="s2">);</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">repaint</span><span class="s2">(); </span><span class="s5">// Repaint the frame to reflect the change</span>
+            <span class="s2">}</span>
+            <span class="s0">catch </span><span class="s2">(</span><span class="s1">ArrayIndexOutOfBoundsException e1</span><span class="s2">){</span>
+                <span class="s1">cartFull</span><span class="s2">.</span><span class="s1">setVisible</span><span class="s2">(</span><span class="s0">true</span><span class="s2">); </span><span class="s5">// Set visible before adding</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">cartFull</span><span class="s2">);</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">repaint</span><span class="s2">(); </span><span class="s5">// Repaint the frame to reflect the change</span>
+
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s0">if</span><span class="s2">(</span><span class="s1">e</span><span class="s2">.</span><span class="s1">getSource</span><span class="s2">() == </span><span class="s1">addButton2</span><span class="s2">){</span>
+            <span class="s0">try</span><span class="s2">{</span>
+            <span class="s1">cart</span><span class="s2">.</span><span class="s1">addProduct</span><span class="s2">(</span><span class="s1">clothingProduct</span><span class="s2">);</span>
+            <span class="s1">inCartn2</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">String</span><span class="s2">.</span><span class="s1">valueOf</span><span class="s2">(++</span><span class="s1">i2</span><span class="s2">));</span>
+                <span class="s1">cartFull</span><span class="s2">.</span><span class="s1">setVisible</span><span class="s2">(</span><span class="s0">false</span><span class="s2">); </span><span class="s5">// Set visible before adding</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">remove</span><span class="s2">(</span><span class="s1">cartFull</span><span class="s2">);</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">repaint</span><span class="s2">(); </span><span class="s5">// Repaint the frame to reflect the change</span>
+        <span class="s2">}</span><span class="s0">catch </span><span class="s2">(</span><span class="s1">ArrayIndexOutOfBoundsException e1</span><span class="s2">){</span>
+                <span class="s1">cartFull</span><span class="s2">.</span><span class="s1">setVisible</span><span class="s2">(</span><span class="s0">true</span><span class="s2">);</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">cartFull</span><span class="s2">);</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">repaint</span><span class="s2">();</span>
+            <span class="s2">}</span>
+
+
+            <span class="s2">}</span>
+        <span class="s0">if</span><span class="s2">(</span><span class="s1">e</span><span class="s2">.</span><span class="s1">getSource</span><span class="s2">() == </span><span class="s1">addButton3</span><span class="s2">){</span>
+            <span class="s0">try</span><span class="s2">{</span>
+            <span class="s1">cart</span><span class="s2">.</span><span class="s1">addProduct</span><span class="s2">(</span><span class="s1">bookProduct</span><span class="s2">);</span>
+            <span class="s1">inCartn3</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">String</span><span class="s2">.</span><span class="s1">valueOf</span><span class="s2">(++</span><span class="s1">i3</span><span class="s2">));</span>
+                <span class="s1">cartFull</span><span class="s2">.</span><span class="s1">setVisible</span><span class="s2">(</span><span class="s0">false</span><span class="s2">); </span><span class="s5">// Set visible before adding</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">remove</span><span class="s2">(</span><span class="s1">cartFull</span><span class="s2">);</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">repaint</span><span class="s2">(); </span><span class="s5">// Repaint the frame to reflect the change</span>
+        <span class="s2">}</span><span class="s0">catch </span><span class="s2">(</span><span class="s1">ArrayIndexOutOfBoundsException e1</span><span class="s2">){</span>
+                <span class="s1">cartFull</span><span class="s2">.</span><span class="s1">setVisible</span><span class="s2">(</span><span class="s0">true</span><span class="s2">);</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">cartFull</span><span class="s2">);</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">repaint</span><span class="s2">();</span>
+            <span class="s2">}</span>
+
+            <span class="s2">}</span><span class="s0">if</span><span class="s2">(</span><span class="s1">e</span><span class="s2">.</span><span class="s1">getSource</span><span class="s2">() == </span><span class="s1">removeButton1</span><span class="s2">) {</span>
+            <span class="s1">cart</span><span class="s2">.</span><span class="s1">removeProduct</span><span class="s2">(</span><span class="s1">electronicProduct</span><span class="s2">);</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">i1 </span><span class="s2">== </span><span class="s3">0</span><span class="s2">) {</span>
+                <span class="s1">inCartn1</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">String</span><span class="s2">.</span><span class="s1">valueOf</span><span class="s2">(</span><span class="s1">i1</span><span class="s2">));</span>
+            <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                <span class="s1">inCartn1</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">String</span><span class="s2">.</span><span class="s1">valueOf</span><span class="s2">(--</span><span class="s1">i1</span><span class="s2">));</span>
+                <span class="s1">cartFull</span><span class="s2">.</span><span class="s1">setVisible</span><span class="s2">(</span><span class="s0">false</span><span class="s2">);</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">remove</span><span class="s2">(</span><span class="s1">cartFull</span><span class="s2">);</span>
+                <span class="s1">frame2</span><span class="s2">.</span><span class="s1">repaint</span><span class="s2">();</span>
+
+            <span class="s2">}</span>
+            <span class="s2">}</span>
+
+
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s1">storeGui storeGui </span><span class="s2">= </span><span class="s0">new </span><span class="s1">storeGui</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+ <span class="s2">}</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</body>
+</html>

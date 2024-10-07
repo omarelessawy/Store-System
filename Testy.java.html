@@ -1,0 +1,485 @@
+<html>
+<head>
+<title>Testy.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #7a7e85;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Testy.java</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">//class MyFrame extends JFrame implements ActionListener {</span>
+<span class="s1">//</span>
+<span class="s1">//    JButton addSM;</span>
+<span class="s1">//    JButton remSM;</span>
+<span class="s1">//    JButton addTS;</span>
+<span class="s1">//    JButton remTS;</span>
+<span class="s1">//    JButton addOOP;</span>
+<span class="s1">//    JButton remOOP;</span>
+<span class="s1">//    JButton yes;</span>
+<span class="s1">//    JButton cancel;</span>
+<span class="s1">//    JButton darkMode;</span>
+<span class="s1">//    ImageIcon darkIcon;</span>
+<span class="s1">//    ImageIcon lightIcon;</span>
+<span class="s1">//    boolean dark = false;</span>
+<span class="s1">//</span>
+<span class="s1">//    int countSM = 0;</span>
+<span class="s1">//    int countTS = 0;</span>
+<span class="s1">//    int countOOP = 0;</span>
+<span class="s1">//</span>
+<span class="s1">//    JLabel loay;</span>
+<span class="s1">//    JLabel welcome;</span>
+<span class="s1">//    JLabel name;</span>
+<span class="s1">//    JLabel id;</span>
+<span class="s1">//    JLabel address;</span>
+<span class="s1">//    JLabel smartphoneLabel;</span>
+<span class="s1">//    JLabel tshirtLabel;</span>
+<span class="s1">//    JLabel oopLabel;</span>
+<span class="s1">//    JLabel orderLabel;</span>
+<span class="s1">//    JPanel items;</span>
+<span class="s1">//    JPanel smartphonePanel;</span>
+<span class="s1">//    JPanel tshirtPanel;</span>
+<span class="s1">//    JPanel oopPanel;</span>
+<span class="s1">//    JLabel countSMLabel;</span>
+<span class="s1">//    JLabel countTSLabel;</span>
+<span class="s1">//    JLabel countOOPLabel;</span>
+<span class="s1">//    JLabel inputError;</span>
+<span class="s1">//    JLabel emptyCart;</span>
+<span class="s1">//</span>
+<span class="s1">//    ElectronicProduct smartphone;</span>
+<span class="s1">//    ClothingProduct tshirt;</span>
+<span class="s1">//    BookProduct oopBook;</span>
+<span class="s1">//</span>
+<span class="s1">//    JTextField nameInput;</span>
+<span class="s1">//    JTextField idInput;</span>
+<span class="s1">//    JTextField addressInput;</span>
+<span class="s1">//</span>
+<span class="s1">//    ArrayList&lt;Product&gt; products = new ArrayList&lt;&gt;();</span>
+<span class="s1">//</span>
+<span class="s1">//    Customer customer;</span>
+<span class="s1">//    public double totalOrderPrice = 0;</span>
+<span class="s1">//    JLabel priceLabel;</span>
+<span class="s1">//</span>
+<span class="s1">//    public MyFrame() {</span>
+<span class="s1">//</span>
+<span class="s1">//        customer = new Customer();</span>
+<span class="s1">//</span>
+<span class="s1">//        lightIcon = new ImageIcon(&quot;sun_resized.png&quot;);</span>
+<span class="s1">//        darkIcon = new ImageIcon(&quot;moon_resized.png&quot;);</span>
+<span class="s1">//        darkMode = new JButton();</span>
+<span class="s1">//        darkMode.setIcon(darkIcon);</span>
+<span class="s1">//        darkMode.setBounds(1104,10,30,30);</span>
+<span class="s1">//        darkMode.addActionListener(this);</span>
+<span class="s1">//</span>
+<span class="s1">//        loay = new JLabel(&quot;©Louai Mohamed 23012117&quot;);</span>
+<span class="s1">//        loay.setFont(new Font(&quot;Arial&quot;, Font.PLAIN, 11));</span>
+<span class="s1">//        loay.setBounds(0,0,200,13);</span>
+<span class="s1">//</span>
+<span class="s1">//        smartphone = new ElectronicProduct();</span>
+<span class="s1">//        smartphone.setBrand(&quot;Samsung&quot;);</span>
+<span class="s1">//        smartphone.setName(&quot;Smartphone&quot;);</span>
+<span class="s1">//        smartphone.setProductID(1);</span>
+<span class="s1">//        smartphone.setWarrantyPeriod(1);</span>
+<span class="s1">//        smartphone.setPrice(599.99);</span>
+<span class="s1">//</span>
+<span class="s1">//        tshirt = new ClothingProduct();</span>
+<span class="s1">//        tshirt.setName(&quot;T-Shirt&quot;);</span>
+<span class="s1">//        tshirt.setProductID(2);</span>
+<span class="s1">//        tshirt.setFabric(&quot;Cotton&quot;);</span>
+<span class="s1">//        tshirt.setSize(&quot;Medium&quot;);</span>
+<span class="s1">//        tshirt.setPrice(19.99);</span>
+<span class="s1">//</span>
+<span class="s1">//        oopBook = new BookProduct();</span>
+<span class="s1">//        oopBook.setAuthor(&quot;O'Reilly&quot;);</span>
+<span class="s1">//        oopBook.setProductID(3);</span>
+<span class="s1">//        oopBook.setPrice(39.99);</span>
+<span class="s1">//        oopBook.setName(&quot;OOP&quot;);</span>
+<span class="s1">//        oopBook.setPublisher(&quot;X Publications&quot;);</span>
+<span class="s1">//</span>
+<span class="s1">//        welcome = new JLabel(&quot;Welcome to the E-Commerce System.&quot;);</span>
+<span class="s1">//        welcome.setBounds(294,15, 1152,34);</span>
+<span class="s1">//        welcome.setFont(new Font(&quot;Arial&quot;, Font.BOLD, 32));</span>
+<span class="s1">//</span>
+<span class="s1">//        name = new JLabel(&quot;Enter your name: &quot;);</span>
+<span class="s1">//        name.setBounds(40, 80, 150, 23);</span>
+<span class="s1">//        name.setFont(new Font(&quot;Arial&quot;, Font.BOLD, 14));</span>
+<span class="s1">//        nameInput = new JTextField();</span>
+<span class="s1">//        nameInput.setBounds(180, 80, 150, 23);</span>
+<span class="s1">//</span>
+<span class="s1">//        id = new JLabel(&quot;Enter your ID: &quot;);</span>
+<span class="s1">//        id.setBounds(380, 80, 150, 23);</span>
+<span class="s1">//        id.setFont(new Font(&quot;Arial&quot;, Font.BOLD, 14));</span>
+<span class="s1">//        idInput = new JTextField();</span>
+<span class="s1">//        idInput.setBounds(520, 80, 150, 23);</span>
+<span class="s1">//</span>
+<span class="s1">//        address = new JLabel(&quot;Enter your address: &quot;);</span>
+<span class="s1">//        address.setBounds(730, 80, 150, 23);</span>
+<span class="s1">//        address.setFont(new Font(&quot;Arial&quot;, Font.BOLD, 14));</span>
+<span class="s1">//        addressInput = new JTextField();</span>
+<span class="s1">//        addressInput.setBounds(910, 80, 150, 23);</span>
+<span class="s1">//</span>
+<span class="s1">//        items = new JPanel();</span>
+<span class="s1">//        items.setBounds(61, 180, 1030, 290);</span>
+<span class="s1">//        items.setBorder(new LineBorder(Color.BLACK, 5));</span>
+<span class="s1">//        items.setLayout(new GridLayout(3,1));</span>
+<span class="s1">//</span>
+<span class="s1">//        smartphonePanel = GUIComp.panel();</span>
+<span class="s1">//        smartphonePanel.setBackground(Color.WHITE);</span>
+<span class="s1">//        smartphonePanel.setBorder(new LineBorder(Color.BLACK,1));</span>
+<span class="s1">//        smartphoneLabel = GUIComp.label(&quot;Smartphone  -  Samsung  -  Warranty period: 1  -  ID: 1  -  $599.99 &quot;);</span>
+<span class="s1">//        smartphonePanel.add(smartphoneLabel);</span>
+<span class="s1">//        smartphoneLabel.setBounds(20,35,700,23);</span>
+<span class="s1">//        smartphoneLabel.setHorizontalAlignment(JLabel.LEFT);</span>
+<span class="s1">//        addSM = GUIComp.button(&quot;Add&quot;, Color.green);</span>
+<span class="s1">//        remSM = GUIComp.button(&quot;Remove&quot;, Color.red);</span>
+<span class="s1">//        smartphonePanel.add(addSM);</span>
+<span class="s1">//        smartphonePanel.add(remSM);</span>
+<span class="s1">//        addSM.setBounds(760, 31, 100, 30);</span>
+<span class="s1">//        remSM.setBounds(880, 31, 100, 30);</span>
+<span class="s1">//        addSM.addActionListener(this);</span>
+<span class="s1">//        remSM.addActionListener(this);</span>
+<span class="s1">//        countSMLabel = GUIComp.label(&quot;In cart: &quot; + countSM);</span>
+<span class="s1">//        smartphonePanel.add(countSMLabel);</span>
+<span class="s1">//        countSMLabel.setBounds(650, 31, 100, 30);</span>
+<span class="s1">//</span>
+<span class="s1">//        tshirtPanel = GUIComp.panel();</span>
+<span class="s1">//        tshirtPanel.setBackground(Color.WHITE);</span>
+<span class="s1">//        tshirtPanel.setBorder(new LineBorder(Color.BLACK,1));</span>
+<span class="s1">//        tshirtLabel = GUIComp.label(&quot;T-Shirt  -  Medium  -  Cotton  - ID: 2  -  $19.99 &quot;);</span>
+<span class="s1">//        tshirtPanel.add(tshirtLabel);</span>
+<span class="s1">//        tshirtLabel.setBounds(20,35,900,23);</span>
+<span class="s1">//        tshirtLabel.setHorizontalAlignment(JLabel.LEFT);</span>
+<span class="s1">//        addTS = GUIComp.button(&quot;Add&quot;, Color.green);</span>
+<span class="s1">//        remTS = GUIComp.button(&quot;Remove&quot;, Color.red);</span>
+<span class="s1">//        tshirtPanel.add(addTS);</span>
+<span class="s1">//        tshirtPanel.add(remTS);</span>
+<span class="s1">//        addTS.setBounds(760, 31, 100, 30);</span>
+<span class="s1">//        remTS.setBounds(880, 31, 100, 30);</span>
+<span class="s1">//        addTS.addActionListener(this);</span>
+<span class="s1">//        remTS.addActionListener(this);</span>
+<span class="s1">//        countTSLabel = GUIComp.label(&quot;In cart: &quot; + countTS);</span>
+<span class="s1">//        tshirtPanel.add(countTSLabel);</span>
+<span class="s1">//        countTSLabel.setBounds(650, 29, 100, 30);</span>
+<span class="s1">//</span>
+<span class="s1">//        oopPanel = GUIComp.panel();</span>
+<span class="s1">//        oopPanel.setBackground(Color.WHITE);</span>
+<span class="s1">//        oopPanel.setBorder(new LineBorder(Color.BLACK,1));</span>
+<span class="s1">//        oopLabel = GUIComp.label(&quot;OOP Book  -  O'Reilly  -  X Publications  -  ID: 3  -  $39.99 &quot;);</span>
+<span class="s1">//        oopPanel.add(oopLabel);</span>
+<span class="s1">//        oopLabel.setBounds(20,35,900,23);</span>
+<span class="s1">//        oopLabel.setHorizontalAlignment(JLabel.LEFT);</span>
+<span class="s1">//        addOOP = GUIComp.button(&quot;Add&quot;, Color.green);</span>
+<span class="s1">//        remOOP = GUIComp.button(&quot;Remove&quot;, Color.red);</span>
+<span class="s1">//        oopPanel.add(addOOP);</span>
+<span class="s1">//        oopPanel.add(remOOP);</span>
+<span class="s1">//        addOOP.setBounds(760, 31, 100, 30);</span>
+<span class="s1">//        remOOP.setBounds(880, 31, 100, 30);</span>
+<span class="s1">//        addOOP.addActionListener(this);</span>
+<span class="s1">//        remOOP.addActionListener(this);</span>
+<span class="s1">//        countOOPLabel = GUIComp.label(&quot;In cart: &quot; + countOOP);</span>
+<span class="s1">//        oopPanel.add(countOOPLabel);</span>
+<span class="s1">//        countOOPLabel.setBounds(650, 29, 100, 30);</span>
+<span class="s1">//</span>
+<span class="s1">//        items.add(smartphonePanel);</span>
+<span class="s1">//        items.add(tshirtPanel);</span>
+<span class="s1">//        items.add(oopPanel);</span>
+<span class="s1">//</span>
+<span class="s1">//        priceLabel = GUIComp.label(&quot;Your total is: $&quot; + totalOrderPrice);</span>
+<span class="s1">//        priceLabel.setBounds(0, 490, 1152, 30);</span>
+<span class="s1">//        priceLabel.setHorizontalAlignment(JLabel.CENTER);</span>
+<span class="s1">//</span>
+<span class="s1">//        orderLabel = GUIComp.label(&quot;Would you like to place an order?&quot;);</span>
+<span class="s1">//        orderLabel.setBounds(0,540, 600, 30);</span>
+<span class="s1">//        orderLabel.setHorizontalAlignment(JLabel.RIGHT);</span>
+<span class="s1">//</span>
+<span class="s1">//        yes = GUIComp.button(&quot;Yes&quot;, new Color(0xFFDF73));</span>
+<span class="s1">//        yes.setBounds(630, 540, 100, 30);</span>
+<span class="s1">//        yes.addActionListener(this);</span>
+<span class="s1">//</span>
+<span class="s1">//        cancel = GUIComp.button(&quot;Cancel&quot;, Color.DARK_GRAY);</span>
+<span class="s1">//        cancel.setBounds(750, 540, 100, 30);</span>
+<span class="s1">//        cancel.addActionListener(this);</span>
+<span class="s1">//</span>
+<span class="s1">//        inputError = GUIComp.label(&quot;Please enter your information correctly.&quot;);</span>
+<span class="s1">//        emptyCart = GUIComp.label(&quot;You have not added any items to your cart.&quot;);</span>
+<span class="s1">//</span>
+<span class="s1">//        this.add(loay);</span>
+<span class="s1">//        this.add(darkMode);</span>
+<span class="s1">//        this.setSize(1152,648);</span>
+<span class="s1">//        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="s1">//        this.setTitle(&quot;E-Commerce System&quot;);</span>
+<span class="s1">//        //this.getContentPane().setBackground(new Color(0xFFDF73));</span>
+<span class="s1">//        this.getContentPane().setBackground(Color.WHITE);</span>
+<span class="s1">//        this.setResizable(false);</span>
+<span class="s1">//        this.setLayout(null);</span>
+<span class="s1">//        this.add(welcome);</span>
+<span class="s1">//        this.add(name);</span>
+<span class="s1">//        this.add(nameInput);</span>
+<span class="s1">//        this.add(id);</span>
+<span class="s1">//        this.add(idInput);</span>
+<span class="s1">//        this.add(address);</span>
+<span class="s1">//        this.add(addressInput);</span>
+<span class="s1">//        this.add(items);</span>
+<span class="s1">//        this.add(priceLabel);</span>
+<span class="s1">//        this.add(orderLabel);</span>
+<span class="s1">//        this.add(yes);</span>
+<span class="s1">//        this.add(cancel);</span>
+<span class="s1">//        this.add(inputError);</span>
+<span class="s1">//        this.add(emptyCart);</span>
+<span class="s1">//        this.setLocationRelativeTo(null);</span>
+<span class="s1">//        this.setVisible(true);</span>
+<span class="s1">//    }</span>
+<span class="s1">//</span>
+<span class="s1">//    @Override</span>
+<span class="s1">//    public void actionPerformed(ActionEvent e) {</span>
+<span class="s1">//        if (e.getSource() == darkMode) {</span>
+<span class="s1">//            boolean checked = false;</span>
+<span class="s1">//            darkMode.setIcon(lightIcon);</span>
+<span class="s1">//            this.getContentPane().setBackground(new Color(0x313338));</span>
+<span class="s1">//            loay.setForeground(Color.WHITE);</span>
+<span class="s1">//            welcome.setForeground(Color.WHITE);</span>
+<span class="s1">//            name.setForeground(Color.WHITE);</span>
+<span class="s1">//            id.setForeground(Color.WHITE);</span>
+<span class="s1">//            address.setForeground(Color.WHITE);</span>
+<span class="s1">//            items.setBorder(new LineBorder(Color.WHITE,5));</span>
+<span class="s1">//            smartphonePanel.setBorder(new LineBorder(Color.WHITE,1));</span>
+<span class="s1">//            smartphonePanel.setBackground(new Color(0x313338));</span>
+<span class="s1">//            smartphoneLabel.setForeground(Color.WHITE);</span>
+<span class="s1">//            countSMLabel.setForeground(Color.WHITE);</span>
+<span class="s1">//            tshirtPanel.setBorder(new LineBorder(Color.WHITE,1));</span>
+<span class="s1">//            tshirtPanel.setBackground(new Color(0x313338));</span>
+<span class="s1">//            tshirtLabel.setForeground(Color.WHITE);</span>
+<span class="s1">//            countTSLabel.setForeground(Color.WHITE);</span>
+<span class="s1">//            oopPanel.setBackground(new Color(0x313338));</span>
+<span class="s1">//            oopPanel.setBorder(new LineBorder(Color.WHITE,1));</span>
+<span class="s1">//            oopLabel.setForeground(Color.WHITE);</span>
+<span class="s1">//            countOOPLabel.setForeground(Color.WHITE);</span>
+<span class="s1">//            priceLabel.setForeground(Color.WHITE);</span>
+<span class="s1">//            orderLabel.setForeground(Color.WHITE);</span>
+<span class="s1">//            if (e.getSource() == darkMode &amp;&amp; dark) {</span>
+<span class="s1">//                checked = true;</span>
+<span class="s1">//                darkMode.setIcon(darkIcon);</span>
+<span class="s1">//                this.getContentPane().setBackground(Color.WHITE);</span>
+<span class="s1">//                loay.setForeground(Color.BLACK);</span>
+<span class="s1">//                welcome.setForeground(Color.BLACK);</span>
+<span class="s1">//                name.setForeground(Color.BLACK);</span>
+<span class="s1">//                id.setForeground(Color.BLACK);</span>
+<span class="s1">//                address.setForeground(Color.BLACK);</span>
+<span class="s1">//                items.setBorder(new LineBorder(Color.BLACK,5));</span>
+<span class="s1">//                smartphonePanel.setBorder(new LineBorder(Color.BLACK,1));</span>
+<span class="s1">//                smartphonePanel.setBackground(Color.WHITE);</span>
+<span class="s1">//                smartphoneLabel.setForeground(Color.BLACK);</span>
+<span class="s1">//                countSMLabel.setForeground(Color.BLACK);</span>
+<span class="s1">//                tshirtPanel.setBorder(new LineBorder(Color.BLACK,1));</span>
+<span class="s1">//                tshirtPanel.setBackground(Color.WHITE);</span>
+<span class="s1">//                tshirtLabel.setForeground(Color.BLACK);</span>
+<span class="s1">//                countTSLabel.setForeground(Color.BLACK);</span>
+<span class="s1">//                oopPanel.setBackground(Color.WHITE);</span>
+<span class="s1">//                oopPanel.setBorder(new LineBorder(Color.BLACK,1));</span>
+<span class="s1">//                oopLabel.setForeground(Color.BLACK);</span>
+<span class="s1">//                countOOPLabel.setForeground(Color.BLACK);</span>
+<span class="s1">//                priceLabel.setForeground(Color.BLACK);</span>
+<span class="s1">//                orderLabel.setForeground(Color.BLACK);</span>
+<span class="s1">//                dark = false;</span>
+<span class="s1">//            }</span>
+<span class="s1">//            if (!checked)</span>
+<span class="s1">//                dark = true;</span>
+<span class="s1">//        }</span>
+<span class="s1">//        if (e.getSource() == addSM) {</span>
+<span class="s1">//            products.add(smartphone);</span>
+<span class="s1">//            countSM++;</span>
+<span class="s1">//            countSMLabel.setText(&quot;In cart: &quot; + countSM);</span>
+<span class="s1">//            totalOrderPrice += smartphone.getPrice();</span>
+<span class="s1">//            priceLabel.setText(&quot;Your total is: $&quot; + (Math.round(totalOrderPrice * 100)/100.0));</span>
+<span class="s1">//        }</span>
+<span class="s1">//        if (e.getSource() == remSM) {</span>
+<span class="s1">//            products.remove(smartphone);</span>
+<span class="s1">//            if (countSM &gt; 0) {</span>
+<span class="s1">//                countSM--;</span>
+<span class="s1">//                totalOrderPrice -= smartphone.getPrice();</span>
+<span class="s1">//            }</span>
+<span class="s1">//            countSMLabel.setText(&quot;In cart: &quot; + countSM);</span>
+<span class="s1">//            priceLabel.setText(&quot;Your total is: $&quot; + (Math.round(totalOrderPrice * 100)/100.0));</span>
+<span class="s1">//        }</span>
+<span class="s1">//        if (e.getSource() == addTS) {</span>
+<span class="s1">//            products.add(tshirt);</span>
+<span class="s1">//            countTS++;</span>
+<span class="s1">//            countTSLabel.setText(&quot;In cart: &quot; + countTS);</span>
+<span class="s1">//            totalOrderPrice += tshirt.getPrice();</span>
+<span class="s1">//            priceLabel.setText(&quot;Your total is: $&quot; + (Math.round(totalOrderPrice * 100)/100.0));</span>
+<span class="s1">//        }</span>
+<span class="s1">//        if (e.getSource() == remTS) {</span>
+<span class="s1">//            products.remove(tshirt);</span>
+<span class="s1">//            if (countTS &gt; 0) {</span>
+<span class="s1">//                countTS--;</span>
+<span class="s1">//                totalOrderPrice -= tshirt.getPrice();</span>
+<span class="s1">//                priceLabel.setText(&quot;Your total is: $&quot; + (Math.round(totalOrderPrice * 100)/100.0));</span>
+<span class="s1">//            }</span>
+<span class="s1">//            countTSLabel.setText(&quot;In cart: &quot; + countTS);</span>
+<span class="s1">//        }</span>
+<span class="s1">//        if (e.getSource() == addOOP) {</span>
+<span class="s1">//            products.add(oopBook);</span>
+<span class="s1">//            countOOP++;</span>
+<span class="s1">//            countOOPLabel.setText(&quot;In cart: &quot; + countOOP);</span>
+<span class="s1">//            totalOrderPrice += oopBook.getPrice();</span>
+<span class="s1">//            priceLabel.setText(&quot;Your total is: $&quot; + (Math.round(totalOrderPrice * 100)/100.0));</span>
+<span class="s1">//        }</span>
+<span class="s1">//        if (e.getSource() == remOOP) {</span>
+<span class="s1">//            products.add(oopBook);</span>
+<span class="s1">//            if (countOOP &gt; 0) {</span>
+<span class="s1">//                totalOrderPrice -= oopBook.getPrice();</span>
+<span class="s1">//                countOOP--;</span>
+<span class="s1">//                priceLabel.setText(&quot;Your total is: $&quot; + (Math.round(totalOrderPrice * 100)/100.0));</span>
+<span class="s1">//            }</span>
+<span class="s1">//            countOOPLabel.setText(&quot;In cart: &quot; + countOOP);</span>
+<span class="s1">//        }</span>
+<span class="s1">//        if (e.getSource() == yes) {</span>
+<span class="s1">//            try {</span>
+<span class="s1">//                customer.setName(nameInput.getText());</span>
+<span class="s1">//                customer.setCustomerId(Integer.parseInt(idInput.getText()));</span>
+<span class="s1">//                customer.setAddress(addressInput.getText());</span>
+<span class="s1">//                if (nameInput.getText().isEmpty() || addressInput.getText().isEmpty()) {</span>
+<span class="s1">//                    inputError.setText(&quot;Please fill in the rest of your information.&quot;);</span>
+<span class="s1">//                    inputError.setBounds(0, 110, 1152, 30);</span>
+<span class="s1">//                    inputError.setForeground(Color.red);</span>
+<span class="s1">//                    inputError.setHorizontalAlignment(JLabel.CENTER);</span>
+<span class="s1">//                }</span>
+<span class="s1">//                else {</span>
+<span class="s1">//                    if (products.isEmpty()) {</span>
+<span class="s1">//                        inputError.setText(&quot;&quot;);</span>
+<span class="s1">//                        emptyCart.setBounds(0, 140, 1152, 30);</span>
+<span class="s1">//                        emptyCart.setForeground(Color.red);</span>
+<span class="s1">//                        emptyCart.setHorizontalAlignment(JLabel.CENTER);</span>
+<span class="s1">//                    }</span>
+<span class="s1">//                    else {</span>
+<span class="s1">//                        Order order = new Order();</span>
+<span class="s1">//                        order.customerId = Integer.parseInt(idInput.getText());</span>
+<span class="s1">//                        order.totalPrice = totalOrderPrice;</span>
+<span class="s1">//                        new OrderWindow(products,totalOrderPrice,order,dark);</span>
+<span class="s1">//                        this.dispose();</span>
+<span class="s1">//                    }</span>
+<span class="s1">//                }</span>
+<span class="s1">//            } catch (Exception NumberFormatException) {</span>
+<span class="s1">//                inputError.setBounds(0, 110, 1152, 30);</span>
+<span class="s1">//                inputError.setForeground(Color.red);</span>
+<span class="s1">//                inputError.setHorizontalAlignment(JLabel.CENTER);</span>
+<span class="s1">//                if (nameInput.getText().isEmpty() || addressInput.getText().isEmpty() || idInput.getText().isEmpty())</span>
+<span class="s1">//                    inputError.setText(&quot;Please enter your information.&quot;);</span>
+<span class="s1">//                else</span>
+<span class="s1">//                    inputError.setText(&quot;ID must be a number.&quot;);</span>
+<span class="s1">//            }</span>
+<span class="s1">//        }</span>
+<span class="s1">//        if (e.getSource() == cancel)</span>
+<span class="s1">//            System.exit(0);</span>
+<span class="s1">//    }</span>
+<span class="s1">//}</span>
+<span class="s1">//</span>
+<span class="s1">//class GUIComp {</span>
+<span class="s1">//    public static JPanel panel() {</span>
+<span class="s1">//        JPanel panel = new JPanel();</span>
+<span class="s1">//        panel.setLayout(null);</span>
+<span class="s1">//        return panel;</span>
+<span class="s1">//    }</span>
+<span class="s1">//    public static JLabel label(String text) {</span>
+<span class="s1">//        JLabel label = new JLabel(text);</span>
+<span class="s1">//        label.setFont(new Font(&quot;Arial&quot;, Font.PLAIN, 18));</span>
+<span class="s1">//        label.setPreferredSize(new Dimension(200, 30));</span>
+<span class="s1">//        return label;</span>
+<span class="s1">//    }</span>
+<span class="s1">//    public static JButton button(String text, Color background) {</span>
+<span class="s1">//        JButton btn = new JButton(text);</span>
+<span class="s1">//        btn.setSize(100,30);</span>
+<span class="s1">//        btn.setHorizontalAlignment(JButton.RIGHT);</span>
+<span class="s1">//        btn.setBackground(background);</span>
+<span class="s1">//        btn.setForeground(Color.WHITE);</span>
+<span class="s1">//        btn.setFont(new Font(&quot;Arial&quot;, Font.PLAIN, 14));</span>
+<span class="s1">//        btn.setBorder(BorderFactory.createEmptyBorder(10,20,10,20));</span>
+<span class="s1">//        btn.setCursor(new Cursor(Cursor.HAND_CURSOR));</span>
+<span class="s1">//        btn.setFocusable(false);</span>
+<span class="s1">//        btn.setHorizontalTextPosition(JButton.CENTER);</span>
+<span class="s1">//        btn.setVerticalTextPosition(JButton.CENTER);</span>
+<span class="s1">//        btn.setHorizontalAlignment(JButton.CENTER);</span>
+<span class="s1">//        btn.setVerticalAlignment(JButton.CENTER);</span>
+<span class="s1">//        return btn;</span>
+<span class="s1">//    }</span>
+<span class="s1">//    public static JTextField textField(String text) {</span>
+<span class="s1">//        JTextField textField = new JTextField();</span>
+<span class="s1">//        textField.setText(text);</span>
+<span class="s1">//        textField.setHorizontalAlignment(SwingConstants.HORIZONTAL);</span>
+<span class="s1">//        textField.setFont(new Font(&quot;Arial&quot;, Font.PLAIN, 18));</span>
+<span class="s1">//        return textField;</span>
+<span class="s1">//    }</span>
+<span class="s1">//}</span>
+<span class="s1">//</span>
+<span class="s1">//class OrderWindow extends JFrame {</span>
+<span class="s1">//</span>
+<span class="s1">//    JPanel itemList;</span>
+<span class="s1">//    JLabel customerInfo;</span>
+<span class="s1">//    JLabel totalLabel;</span>
+<span class="s1">//</span>
+<span class="s1">//    OrderWindow(ArrayList&lt;Product&gt; inCart, double totalOrderPrice, Order order, boolean dark) {</span>
+<span class="s1">//</span>
+<span class="s1">//        customerInfo = new JLabel(&quot;&lt;html&gt;Order ID: &quot; + order.orderId + &quot;&lt;br/&gt;Customer ID: &quot; + order.customerId + &quot;&lt;br/&gt;Products:&lt;/html&gt;&quot;);</span>
+<span class="s1">//        customerInfo.setFont(new Font(&quot;Arial&quot;, Font.PLAIN, 23));</span>
+<span class="s1">//        customerInfo.setHorizontalAlignment(0);</span>
+<span class="s1">//        customerInfo.setBounds(0,10,300, 74);</span>
+<span class="s1">//</span>
+<span class="s1">//        itemList = new JPanel();</span>
+<span class="s1">//        itemList.setBounds(10,100,270,300);</span>
+<span class="s1">//        itemList.setLayout(new GridLayout(inCart.size(),1,5,5));</span>
+<span class="s1">//</span>
+<span class="s1">//        for (Product product : inCart) {</span>
+<span class="s1">//            JLabel item = new JLabel(product.getName() + &quot; - $&quot; + product.getPrice());</span>
+<span class="s1">//            item.setFont(new Font(&quot;Arial&quot;, Font.PLAIN, 18));</span>
+<span class="s1">//            item.setHorizontalAlignment(0);</span>
+<span class="s1">//            if (dark)</span>
+<span class="s1">//                item.setForeground(Color.WHITE);</span>
+<span class="s1">//            itemList.add(item);</span>
+<span class="s1">//        }</span>
+<span class="s1">//</span>
+<span class="s1">//        JScrollPane sp = new JScrollPane(itemList);</span>
+<span class="s1">//        sp.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));</span>
+<span class="s1">//        itemList.setBorder(new LineBorder(Color.BLACK,1));</span>
+<span class="s1">//        sp.setBackground(null);</span>
+<span class="s1">//        this.add(sp, BorderLayout.CENTER);</span>
+<span class="s1">//        totalLabel = new JLabel(&quot;Total Price: $&quot; + (Math.round(totalOrderPrice * 100)/100.0));</span>
+<span class="s1">//        totalLabel.setFont(new Font(&quot;Arial&quot;, Font.PLAIN, 23));</span>
+<span class="s1">//        totalLabel.setHorizontalAlignment(0);</span>
+<span class="s1">//        totalLabel.setBounds(0,415,300, 30);</span>
+<span class="s1">//</span>
+<span class="s1">//        if (dark) {</span>
+<span class="s1">//            this.getContentPane().setBackground(new Color(0x313338));</span>
+<span class="s1">//            customerInfo.setForeground(Color.WHITE);</span>
+<span class="s1">//            itemList.setBackground(new Color(0x313338));</span>
+<span class="s1">//            itemList.setBorder(new LineBorder(Color.WHITE,1));</span>
+<span class="s1">//            totalLabel.setForeground(Color.WHITE);</span>
+<span class="s1">//            sp.setBorder(new LineBorder(Color.WHITE,1));</span>
+<span class="s1">//        }</span>
+<span class="s1">//</span>
+<span class="s1">//        this.setSize(300, 470);</span>
+<span class="s1">//        this.setLocationRelativeTo(null);</span>
+<span class="s1">//        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="s1">//        this.add(customerInfo, BorderLayout.NORTH);</span>
+<span class="s1">//        this.add(totalLabel, BorderLayout.SOUTH);</span>
+<span class="s1">//        this.setResizable(false);</span>
+<span class="s1">//        this.setTitle(&quot;Order #&quot; + order.orderId + &quot; Receipt&quot;);</span>
+<span class="s1">//        this.setVisible(true);</span>
+<span class="s1">//    }</span>
+<span class="s1">//}</span>
+
+<span class="s2">public class </span><span class="s0">Testy </span><span class="s3">{</span>
+   <span class="s2">int</span><span class="s3">[] </span><span class="s0">k </span><span class="s3">= {</span><span class="s4">1 </span><span class="s3">,</span><span class="s4">4 </span><span class="s3">, </span><span class="s4">3</span><span class="s3">, </span><span class="s4">4</span><span class="s3">};</span>
+    <span class="s2">int </span><span class="s0">omar </span><span class="s3">= </span><span class="s0">k</span><span class="s3">.</span><span class="s0">length</span><span class="s3">;</span>
+
+<span class="s3">}</span></pre>
+</body>
+</html>
